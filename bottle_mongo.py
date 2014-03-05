@@ -1,4 +1,3 @@
-
 from bottle import PluginError, response
 from pymongo import Connection
 from pymongo.cursor import Cursor
@@ -67,7 +66,7 @@ class MongoPlugin(object):
         for other in app.plugins:
             if not isinstance(other,MongoPlugin): continue
             if other.keyword == self.keyword:
-                raise PluginError("Found another redis plugin with "\
+                raise PluginError("Found another mongo plugin with "\
                         "conflicting settings (non-unique keyword).")
                         
         # Remove builtin JSON Plugin
